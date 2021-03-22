@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Project Georeferenced Data - My Places</title>
+
+		<!-- CSS stylesheet -->
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+		<!-- CSS Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- JS LocalForage -->
+		<script src="localForage-master/dist/localforage.js" defer></script>
+
+		<!-- JS Webpage -->
+		<script src="savedplaces.js" defer></script>
+	</head>
+	<body onload="createList()">
+		<header>
+			<h2>My saved places</h2>
+		</header>
+		<section class="navBar">
+			<a class="nav" href="index.html"><i class="fa fa-home navIcon"></i> Welcome page</a>
+			<a class="nav" href="map.html"><img src="images/mapIcon.png" alt="Map icon" height="16"> Map page</a>
+		</section>
+		<section id="places">
+			<!-- Number of saved places -->
+			<!-- Format:
+				Shows places with the names given to them
+				Click on place -> more informations appear under it (List)? Or all informations visible at once (Table)? -->
+			<!-- Options to modify places? -->
+			<!-- Option to delete places -->
+		</section>
+		<footer>
+			<small>Copyright &copy; 2018, Iris Kremer, BiCS Semester 1 Project</small>
+			<!-- Add Copyright of API chosen -->
+		</footer>
+	</body>
+</html>

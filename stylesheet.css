@@ -1,0 +1,516 @@
+/*Google Maps*/
+*
+	{
+		margin:0;
+		padding:0;
+		color:hsl(250, 0%, 30%);
+		font-family: Calibri, Georgia;
+	}
+
+/*__________ Normal Tags __________*/
+
+html
+	{
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+body
+	{
+		background-color: hsl(250, 100%, 80%);
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+header
+	{
+		background-color: hsl(250, 40%, 50%);
+		padding:1.5em;
+	}
+
+footer
+	{
+		width:100%;
+		position:fixed;
+		bottom:20px;
+		text-align:center;
+	}
+
+h1
+	{
+		text-align:center;
+		color:hsl(250, 0%, 90%);
+		font-size:3.2em;
+	}
+
+h2
+	{
+		text-align:left;
+		color:hsl(250, 0%, 90%);
+		font-size:2em;
+	}
+
+h3
+	{
+		font-size:2em;
+		font-family: Calibri, Georgia;
+		margin: 0.5em 0em;
+	}
+
+h4
+	{
+		font-size:1.3em;
+	}
+
+h5
+	{
+		font-size:2em;
+		margin-bottom: 0.5em;
+		text-align:center;
+	}
+
+h6
+	{
+		font-size:2em;
+	}
+
+a
+	{
+		text-decoration:none
+	}
+
+a:hover
+	{
+		color:hsl(250, 100%, 80%);
+	}
+
+/*__________ Classes __________*/
+
+.Button
+	{
+		margin:0.5em 0em 1.5em 0em;
+		border: 1px hsl(250, 0%, 90%) solid;
+		border-radius: 70% 30% 65% 35% / 50% 30% 70% 50%;
+		box-shadow:2px 2px 4px hsl(250, 0%, 50%);
+		background-color:hsl(250, 0%, 90%);
+		padding:0.8em;
+		font-weight: bold;
+		font-style: italic;
+		font-size:38px;
+		text-align:center;
+		max-width:250px;
+		min-width:150px;
+		cursor:pointer;
+	}
+
+.Button:hover
+	{
+		border-radius:30% 70% 35% 65% / 50% 70% 30% 50%;
+		background-color:hsl(250, 0%, 99%);
+		color:hsl(250, 100%, 80%);
+	}
+
+.Intro
+	{
+		text-align:center;
+		padding:0.5em;
+	}
+
+.navBar
+	{
+		background-color:hsl(250, 0%, 30%);
+		padding: 0.8em 1.5em;
+	}
+
+.nav
+	{
+		color:hsl(250, 0%, 90%);
+		padding-right: 2em;
+	}
+
+.navIcon
+	{
+		color:hsl(250, 0%, 90%);
+	}
+
+.sideNav
+	{
+		background-color:hsl(250, 0%, 30%);
+		text-align:center;
+		padding: 0.5em 0em;
+		margin-bottom:0.8em;
+	}
+
+.smallLink
+	{
+		font-size:12px;
+		color:hsl(250, 0%, 90%);
+		padding-right: 1.5em;
+	}
+
+.form fieldset
+	{
+		padding:0.5em;
+	}
+
+.form legend
+	{
+		font-weight: bold;
+		font-size:1.2em;
+		text-align:center;
+		padding:0em 0.5em;
+	}
+
+.form label
+	{
+		display:block;
+	}
+
+.form input[type="text"]
+	{
+		width:100%;
+		box-sizing: border-box;
+		border-radius: 3px;
+		margin:0.5em 0em;
+		padding: 0.5em;
+	}
+
+.form input[type="submit"], .form input[type="reset"], .changePlace
+	{
+		border:0px solid transparent;
+		border-radius:70% 30% 65% 35% / 50% 30% 70% 50%;
+		box-sizing:border-box;
+		box-shadow:2px 2px 4px hsl(250, 0%, 73%);
+		background-color:hsl(250, 0%, 30%);
+		color:hsl(250, 0%, 90%);
+		margin:0.5em 0.2em;
+		padding:0.5em 1em;
+		cursor:pointer;
+		outline: none;
+	}
+
+.form input[type="submit"]:hover, .form input[type="reset"]:hover, .changePlace:hover
+	{
+		border-radius:30% 70% 35% 65% / 50% 70% 30% 50%;
+		background-color:hsl(250, 0%, 20%);
+		color:hsl(250, 100%, 80%);
+	}
+
+.form textarea
+	{
+		height:120px;
+		width:100%;
+		box-sizing: border-box;
+		border-radius: 3px;
+		margin:0.5em 0em;
+		padding: 0.5em;
+	}
+
+.form textarea:focus, .form input[type="text"]:focus
+	{
+		outline: none;
+		border: 2px solid hsl(250, 0%, 30%);
+	}
+
+.form select
+	{
+		width:90%;
+		box-sizing: border-box;
+		margin:0.5em 0em;
+		padding: 0.25em;
+		outline: none;
+	}
+
+.form input[type="checkbox"]
+	{
+		margin-left:0.8em;
+	}
+
+.fileContainer
+	{
+		display:table;
+		width:100%;
+		margin-bottom:0.5em;
+		box-sizing:border-box;
+	}
+
+.remove
+	{
+		padding:0.8em;
+		background-color:hsl(250, 0%, 30%);
+		color:hsl(250, 0%, 90%);
+		border:0px transparent solid;
+		border-radius:3px;
+		text-align:center;
+		display:table-cell;
+		box-sizing:border-box;
+	}
+
+.remove:hover
+	{
+		background-color:hsl(250, 0%, 20%);
+		color:hsl(250, 100%, 80%);
+		cursor:pointer;
+	}
+
+.selectDiv
+	{
+		width:50%;
+		text-align:center;
+		float:left;
+	}
+
+.submitDiv
+	{
+		text-align:center;
+		float:left;
+		width:100%;
+	}
+
+.changeAllPins
+	{
+		width:45%;
+		margin-top:0.2em;
+		margin-bottom:1em;
+	}
+
+.side
+	{
+		position:relative;
+		float:left;
+		max-height:92%;
+		overflow:auto;
+		background-color:hsl(250, 0%, 99%);
+		box-sizing:border-box;
+		box-shadow:1px 1px 4px hsl(250, 0%, 73%);
+		border:1px transparent solid;
+		border-radius:5px;
+		padding:1em 0.5em;
+		margin:5px 0px 0px 5px;
+	}
+
+.sideButton
+	{
+		position:relative;
+		float:left;
+		box-sizing:border-box;
+		background-color:hsl(250, 0%, 99%);
+		box-shadow:1px 1px 4px hsl(250, 0%, 73%);
+		border:0px transparent solid;
+		border-radius:5px;
+		margin: 5px 0px 0px 5px;
+		padding:3px 5px;
+		outline:none;
+		cursor:pointer;
+	}
+
+.optionLabel
+	{
+		margin:0.5em 0em;
+	}
+
+.checkboxLabel
+	{
+		font-size: 0.8em;
+		display:inline;
+	}
+
+.controlDiv
+	{
+		background-color:hsl(250, 0%, 100%);
+		box-sizing:border-box;
+		box-shadow:1px 1px 4px hsl(250, 0%, 73%);
+		border:2px solid hsl(250, 0%, 100%);
+		border-radius:2px;
+		margin:0.5em 0em 0em 0em;
+		padding:0px 5px;
+	}
+
+.infoWindow img
+	{
+		display:block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top:0.75em;
+		margin-bottom:0.75em;
+		max-height:200px;
+		width: auto;
+	}
+
+.infoWindowContent
+	{
+		padding: 0.5em 0em;
+		width:100%;
+	}
+
+.infoWindowCoords
+	{
+		padding: 0.75em 0em;
+	}
+
+.placeDiv
+	{
+		box-sizing:border-box;
+		text-align:center;
+		break-inside: avoid;
+		border:2px hsl(250, 0%, 30%) solid;
+		margin-bottom:0.5em;
+		padding:1em;
+	}
+
+.placeDiv p
+	{
+		margin:0.5em 0em 1em 0em;
+	}
+
+.placeDivSide
+	{
+		box-sizing:border-box;
+		text-align:center;
+		border:2px hsl(250, 0%, 30%) solid;
+		margin-bottom:0.2em;
+		padding:0.5em;
+	}
+
+.titleDiv
+	{
+		width:100%;
+		cursor:pointer;
+	}
+
+.contentDiv
+	{
+		margin-top: 1em;
+	}
+
+.bigContentDiv
+	{
+		margin-top: 1.5em;
+	}
+
+.iconImg
+	{
+		width:30px;
+		float:left;
+	}
+
+.placeImg
+	{
+		max-width:100%;
+		height:auto;
+	}
+
+.disableModif
+	{
+		background-color:hsl(250 0% 50%);
+	}
+
+.disableModif:hover
+	{
+		cursor:auto;
+		background-color:hsl(250 0% 50%);
+		border-radius:70% 30% 65% 35% / 50% 30% 70% 50%;
+		color:hsl(250, 0%, 90%);
+	}
+
+/*__________ IDs __________*/
+
+#Intro
+	{
+		margin:1em 1.5em;
+	}
+
+#sideBar
+	{
+		width:300px;
+	}
+
+#sideOptions
+	{
+		width:220px;
+		display:none;
+	}
+
+#sideButtons
+	{
+		box-sizing:border-box;
+		width:30px;
+		float:left;
+	}
+
+#map
+	{
+		height:100%;
+		width:100%;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+
+#copyright
+	{
+		font-size:small;
+	}
+
+#controls
+	{
+		position:absolute;
+		box-sizing:border-box;
+		width:50px;
+		right:0px;
+		bottom:200px;
+	}
+
+#controlCircleDiv
+	{
+		padding-top:3px;
+	}
+
+#controlMarkerDiv:hover, #controlCircleDiv:hover, #controlMarkerDiv:focus, #controlCircleDiv:focus
+	{
+		cursor:pointer;
+		outline:none;
+	}
+
+#file
+	{
+		display:none;
+	}
+
+#fileLabel
+	{
+		width:80%;
+		display:table-cell;
+		background-color:hsl(250, 0%, 100%);
+		box-sizing:border-box;
+		border:1px hsl(250, 0%, 65%) solid;
+		border-radius:3px;
+		cursor:pointer;
+		text-align:center;
+	}
+
+#fileLabel:hover
+	{
+		border:1px hsl(250, 0%, 30%) solid;
+		color:hsl(250, 100%, 80%);
+	}
+
+#places
+	{
+		column-count: 2;
+		column-gap: 0.5em;
+		margin:1em 1em 3.5em 1em;
+	}
+
+#POI
+	{
+		width:300px;
+		display:none;
+	}
+
+#POI p
+	{
+		margin:0.5em 0em 1em 0em;
+	}

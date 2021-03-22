@@ -1,0 +1,137 @@
+<!-- Google Maps -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Project Georeferenced Data - Map</title>
+		<!-- CSS Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+		<!-- CSS Icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- JS LocalForage -->
+		<script src="localForage-master/dist/localforage.js" defer></script>
+
+		<!-- JS Webpage -->
+		<script src="main.js" defer></script>
+
+		<!-- JS Google Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=initMap" defer></script>
+	</head>
+	<body>
+		<div id="map"></div>
+
+		<!-- Controls to select a polygon or a circle -->
+		<div id="controls">
+			<button class="controlDiv" id="controlMarkerDiv" onclick="setMarker()" disabled><img src="images/drawMarkerIcon.png" alt="Draw a marker" width="26px"></button>
+			<button class="controlDiv" id="controlPolyDiv" onclick="selectPoly()" disabled><img src="images/drawPolyIcon.png" alt="Draw a polygon" width="26px"></button>
+			<button class="controlDiv" id="controlCircleDiv" onclick="selectCircle()"><img src="images/drawCircleIcon.png" alt="Draw a circle" width="26px"></button>
+		</div>
+		<!--Side divs -->
+		<div class="side" id="sideBar">
+			<!-- Navbar -->
+			<div class="sideNav">
+				<a class="smallLink" href="index.html"><i class="fa fa-home navIcon"></i> Welcome page</a>
+				<a class="smallLink" href="savedplaces.html"><img src="images/listIcon.png" alt="List icon" height="12"> Saved places</a>
+			</div>
+
+			<!-- Form -->
+			<form id="form" class="form">
+				<fieldset>
+					<legend>Point of interest</legend>
+					<div>
+						<input type="hidden" id="latLngCo" name="latLngCo" placeholder="LatLng coordinates" value="">
+					</div>
+					<div>
+						<label>Name of the place:</label>
+						<input type="text" id='placeName' name="placeName" maxlength="50" placeholder="Max. 50 characters">
+					</div>
+					<div>
+						<label>Comment:</label>
+						<textarea id='placeComment' name="placeComment"></textarea>
+					</div>
+					<div class="fileContainer">
+						<label for="file" id="fileLabel">Upload an image</label>
+						<input type="file" name="file" id="file" accept="image/*" onchange="getFile(event)">
+						<label class="remove" onclick="removeFile()">Remove</label>
+					</div>
+					<div class="selectDiv">
+						<label>Type of pin:</label>
+						<select id="type" name="type">
+							<option value="pushPin">Pushpin</option>
+							<option value="markerPin">Marker</option>
+							<option value="flagPin">Flag</option>
+						</select>
+					</div>
+					<div class="selectDiv">
+						<label>Colour:</label>
+						<select id="color" name="color">
+							<option value="blue">Blue</option>
+							<option value="green">Green</option>
+							<option value="pink">Pink</option>
+						</select>
+					</div>
+					<div class="submitDiv">
+						<input type="submit" value="Save">
+						<input type="reset" value="Reset" onclick="removeFile()">
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		<!-- Saved places -->
+		<div class="side" id="POI">
+			<!-- Navbar -->
+			<div class="sideNav">
+				<a class="smallLink" href="index.html"><i class="fa fa-home navIcon"></i> Welcome page</a>
+				<a class="smallLink" href="savedplaces.html"><img src="images/listIcon.png" alt="List icon" height="12"> Saved places</a>
+			</div>
+
+			<!-- Saved places -->
+			<h5>Saved places</h5>
+		</div>
+
+		<!-- Display options -->
+		<div class="side" id="sideOptions">
+			<form class="form" id="optionForm">
+				<fieldset>
+					<legend>Display options</legend>
+					<div class="submitDiv">
+						<button class="changePlace changeAllPins" onclick="panAllPins()">Pan to all places</button>
+						<button class="changePlace changeAllPins" onclick="clearAllPins()">Delete all places</button>
+					</div>
+					<div>
+						<label class="optionLabel">Pin Types:</label>
+							<input type="checkbox" name="pushPin" id="pushPin" value="pushPin" checked> <p class="checkboxLabel">Pushpins</p><br/>
+							<input type="checkbox" name="markerPin" id="markerPin" value="markerPin" checked> <p class="checkboxLabel">Markers</p><br/>
+							<input type="checkbox" name="flagPin" id="flagPin" value="flagPin" checked> <p class="checkboxLabel">Flags</p><br/>
+							<input type="checkbox" name="circlePin" id="circlePin" value="circlePin" checked> <p class="checkboxLabel">Circles</p>
+					</div>
+					<div>
+						<label class="optionLabel">Pin Colours:</label>
+							<input type="checkbox" name="blue" id="blue" value="blue" checked> <p class="checkboxLabel">Blue</p><br/>
+							<input type="checkbox" name="green" id="green" value="green" checked> <p class="checkboxLabel">Green</p><br/>
+							<input type="checkbox" name="pink" id="pink" value="pink" checked> <p class="checkboxLabel">Pink</p>
+					</div>
+					<div class="submitDiv">
+						<input type="submit" value="Apply">
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		<!-- Show/hide buttons -->
+		<div id="sideButtons">
+			<button class="sideButton" id="sidebarButton" onclick="showHideSidebar()"><i class="fa fa-arrow-left"></i></button>
+			<button class="sideButton" id="switchButton" onclick="switchFormPlaces()"><i class="fa fa-bars"></i></button>
+			<button class="sideButton" id="optionButton" onclick="showHideOptions()"><i class="fa fa-search"></i></button>
+		</div>
+		
+		<!-- Copyright -->
+		<footer>
+			<p id="copyright">Copyright &copy; 2018, Iris Kremer, BiCS Semester 1 Project</p>
+			<!-- Add Copyright of API chosen -->
+		</footer>
+	</body>
+</html>
